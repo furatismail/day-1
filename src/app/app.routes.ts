@@ -15,6 +15,10 @@ export const routes: Routes = [
     {
         path: 'about',
         loadChildren: () => import('./features/about/about.routes').then((routes) => routes.AboutRoutes)
+    },
+    {
+        path: 'control-panel',
+        loadChildren: () => import('./features/control-panel/control-panel.routes').then((routes) => routes.ControlPanelRoutes)
     }
    
 ];

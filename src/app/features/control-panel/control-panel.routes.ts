@@ -11,7 +11,7 @@ export const ControlPanelRoutes: Routes = [
                 loadComponent: () => import('./settings/settings.component').then((component) => component.SettingsComponent)
             },
             {
-                path: 'settings',
+                path: 'statistics',
                 component: StatisticsComponent
             }
         ]
