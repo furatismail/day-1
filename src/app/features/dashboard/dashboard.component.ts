@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, DoCheck, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MyExampleService } from '../../my-example.service';
 
@@ -10,12 +10,18 @@ import { MyExampleService } from '../../my-example.service';
   styleUrl: './dashboard.component.css',
   providers: []
 })
-export class DashboardComponent {
+export class DashboardComponent implements DoCheck{
   private router = inject(Router)
 
+  ngOnInit() {
+  }
 
   navigateToAbout() : void {
     this.router.navigate(['/about/team'])
+  }
+
+  ngDoCheck() {
+    console.log('DashboardComponent: Do I live?')
   }
 }
 
