@@ -9,10 +9,12 @@ export const routes: Routes = [
     },
     {
         path: "dashboard",
-        component: DashboardComponent
+        component: DashboardComponent,
+        providers: []
     },
     {
-        path: "about/team",
-        loadComponent: () => import('./features/about/team/team.component').then((component) => component.TeamComponent)
+        path: 'about',
+        loadChildren: () => import('./features/about/about.routes').then((routes) => routes.AboutRoutes)
     }
+   
 ];
